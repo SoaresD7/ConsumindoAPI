@@ -19,7 +19,7 @@ CREATE TABLE cargos (
     nome VARCHAR(100) NOT NULL,
     descricao VARCHAR(255)
 
-CREATE TABLE funcionarios_por_cargos (Add commentMore actions
+CREATE TABLE funcionarios_por_cargos (
     id BIGINT AUTO_INCREMENT PRIMARY KEY,
     funcionario_id BIGINT NOT NULL,
     cargo_id BIGINT NOT NULL,
@@ -27,6 +27,6 @@ CREATE TABLE funcionarios_por_cargos (Add commentMore actions
     data_inicio DATE NOT NULL,
     data_fim DATE,
 
-    FOREIGN KEY (funcionario_id) REFERENCES funcionarios(id) ON DELETE CASCADE,Add commentMore actions
+    FOREIGN KEY (funcionario_id) REFERENCES funcionarios(id) ON DELETE CASCADE,
     FOREIGN KEY (cargo_id) REFERENCES cargos(id) ON DELETE CASCADE
 );
