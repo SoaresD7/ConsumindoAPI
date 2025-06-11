@@ -24,7 +24,7 @@ CREATE TABLE funcionarios_por_cargos (
     funcionario_id BIGINT NOT NULL,
     cargo_id BIGINT NOT NULL,
     detalhes VARCHAR(255),
-    data_inicio DATE NOT NULL,
+    data_inicio DATE,
     data_fim DATE,
 
     FOREIGN KEY (funcionario_id) REFERENCES funcionarios(id) ON DELETE CASCADE,

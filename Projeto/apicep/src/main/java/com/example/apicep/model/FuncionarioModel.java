@@ -1,6 +1,5 @@
 package com.example.apicep.model;
 
-import java.sql.Date;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -17,21 +16,30 @@ public class FuncionarioModel {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "funcionario_id", nullable = false, referencedColumnName = "id")
-    private FuncionarioModel funcionario;
+    @Column(nullable = false, length = 100)
+    private String nome;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "cargo_id", nullable = false, referencedColumnName = "id")
-    private CargoModel cargo;
+    @Column(nullable = false, unique = true, length = 100)
+    private String email;
 
-    @Column(length = 255)
-    private String detalhes;
+    @Column(nullable = false, length = 255)
+    private String senha;
 
-    @Column(nullable = false)
-    @Temporal(TemporalType.DATE)
-    private Date dataInicio;
+    @Column(nullable = false, length = 10)
+    private String cep;
 
-    @Temporal(TemporalType.DATE)
-    private Date dataFim;
+    @Column(nullable = false, length = 150)
+    private String endereco;
+
+    @Column(nullable = false, length = 10)
+    private String numero;
+
+    @Column(nullable = false, length = 100)
+    private String bairro;
+
+    @Column(nullable = false, length = 100)
+    private String cidade;
+
+    @Column(nullable = false, length = 2)
+    private String estado;
 }
